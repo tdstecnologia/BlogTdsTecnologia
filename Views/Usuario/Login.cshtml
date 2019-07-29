@@ -1,0 +1,32 @@
+﻿@using BlogTdsTecnologia.Models
+@model Usuario
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+}
+
+<form asp-action="Novo" method="post">
+
+    <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" asp-for="Email" required data-validation-required-message="Email">
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+            <label>Senha</label>
+            <input type="password" class="form-control" placeholder="Senha" asp-for="Senha" required data-validation-required-message="Senha" />
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+
+    <br />
+    <div class="form-group d-flex justify-content-center">
+        <input class="btn btn-primary text-center align-content-center" type="submit" value="Entrar" />
+    </div>
+   
+</form>

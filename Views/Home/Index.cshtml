@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BlogTdsTecnologia.Models.Post>
+
+@{
+    Layout = "_Layout";
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+            <a href="post.html">
+                <h2 class="post-title">
+                    @item.Titulo
+                </h2>
+                <h3 class="post-subtitle">
+                    @item.Texto
+                </h3>
+            </a>
+            <p class="post-meta">
+                Posted by
+                <a href="#">Start Bootstrap</a>
+                on September 24, 2019
+            </p>
+        </div>
+        <hr>
+    </div>
+}

@@ -1,0 +1,29 @@
+﻿@using BlogTdsTecnologia.Models
+@model Post
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+}
+
+<form asp-action="Novo" method="post">
+
+    <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+            <label>Título</label>
+            <input type="text" class="form-control" placeholder="Título" asp-for="Titulo" required data-validation-required-message="Título">
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+            <label>Título</label>
+            <textarea rows="3" class="form-control" placeholder="Resumo" asp-for="Resumo" required data-validation-required-message="Resumo"></textarea>
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+
+    <input type="submit" value="Salvar" />
+
+</form>
