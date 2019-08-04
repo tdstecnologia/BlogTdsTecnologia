@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BlogTdsTecnologia.Models
 {
@@ -26,5 +23,10 @@ namespace BlogTdsTecnologia.Models
 
         [Column("data_criacao")]
         public DateTime DataCriacao { get; set; }
+
+        [Column("autor")]
+        public int AutorId { get; set; }
+
+        public Usuario Autor { get; set; }
     }
 }

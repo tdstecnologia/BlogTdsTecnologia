@@ -16,5 +16,12 @@ namespace BlogTdsTecnologia.Models
 
         public DbSet<Usuario> UsuarioDao { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Post>()
+                .HasOne(p => p.Autor)
+                .WithMany(u => u.Posts)
+                .HasForeignKey(p => p.AutorId);
+        }
     }
 }

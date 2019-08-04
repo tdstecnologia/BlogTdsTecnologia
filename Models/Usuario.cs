@@ -31,5 +31,8 @@ namespace BlogTdsTecnologia.Models
 
         [Column("data_ativacao")]
         public DateTime DataAtivacao { get; set; }
+
+        [InverseProperty("Autor")]
+        public List<Post> Posts { get; set; }
     }
 }
