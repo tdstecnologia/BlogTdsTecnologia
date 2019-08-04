@@ -1,11 +1,10 @@
-﻿using System;
+﻿using BlogTdsTecnologia.Models.PostModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BlogTdsTecnologia.Models
+namespace BlogTdsTecnologia.Models.UsuarioModel
 {
     [Table("tb02_usuario")]
     public class Usuario

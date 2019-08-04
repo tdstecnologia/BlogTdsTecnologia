@@ -1,4 +1,5 @@
 ﻿using BlogTdsTecnologia.Models;
+using BlogTdsTecnologia.Models.PostModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -7,11 +8,11 @@ namespace BlogTdsTecnologia.Controllers
 {
     public class PostController : Controller
     {
-        private readonly Persistencia _context;
+        private readonly PostBusiness _postBusiness;
 
         public PostController(Persistencia context)
         {
-            _context = context;
+            _postBusiness = new PostBusiness(context);
         }
 
         [HttpGet]
@@ -25,9 +26,7 @@ namespace BlogTdsTecnologia.Controllers
         {
             if (ModelState.IsValid)
             {
-                post.DataCriacao = DateTime.Now;
-                _context.Add(post);
-                await _context.SaveChangesAsync();
+                await _postBusiness.CadastrarPost(post);
                 return RedirectToAction("Novo");
             }
             return View(post);

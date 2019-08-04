@@ -1,8 +1,7 @@
 ﻿using BlogTdsTecnologia.Models;
+using BlogTdsTecnologia.Models.UsuarioModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BlogTdsTecnologia.Controllers
@@ -10,11 +9,11 @@ namespace BlogTdsTecnologia.Controllers
     public class UsuarioController : Controller
     {
 
-        private readonly Persistencia _context;
+        private readonly UsuarioBusiness _usuarioBusiness;
 
         public UsuarioController(Persistencia context)
         {
-            _context = context;
+            _usuarioBusiness = new UsuarioBusiness(context);
         }
 
         public IActionResult Novo()
@@ -27,9 +26,15 @@ namespace BlogTdsTecnologia.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index","Home");
+                try
+                {
+                    await _usuarioBusiness.CadastrarUsuario(usuario);
+                    return RedirectToAction("Index", "Home");
+                }
+                catch (Exception e)
+                {
+                    return View();
+                }
             }
             return View();
         }

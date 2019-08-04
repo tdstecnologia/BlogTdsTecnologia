@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BlogTdsTecnologia.Models.UsuarioModel;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BlogTdsTecnologia.Models
+namespace BlogTdsTecnologia.Models.PostModel
 {
 
     [Table("tb01_post")]

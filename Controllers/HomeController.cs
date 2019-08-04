@@ -1,4 +1,5 @@
 ﻿using BlogTdsTecnologia.Models;
+using BlogTdsTecnologia.Models.PostModel;
 using BlogTdsTecnologia.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

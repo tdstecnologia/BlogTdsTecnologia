@@ -1,4 +1,4 @@
-﻿@using BlogTdsTecnologia.Models
+﻿@using BlogTdsTecnologia.Models.PostModel
 @model Post
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
@@ -6,25 +6,34 @@
     Layout = "_Layout";
 }
 
-<form asp-action="Novo" method="post">
+    <form asp-action="Novo" method="post">
 
-    <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-            <label>Título</label>
-            <input type="text" class="form-control" placeholder="Título" asp-for="Titulo" required data-validation-required-message="Título">
-            <p class="help-block text-danger"></p>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>Título</label>
+                <input type="text" class="form-control" placeholder="Título" asp-for="Titulo" required data-validation-required-message="Título">
+                <p class="help-block text-danger"></p>
+            </div>
         </div>
-    </div>
 
-    <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-            <label>Título</label>
-            <textarea rows="3" class="form-control" placeholder="Resumo" asp-for="Resumo" required data-validation-required-message="Resumo"></textarea>
-            <p class="help-block text-danger"></p>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>Resumo</label>
+                <textarea rows="3" class="form-control" placeholder="Resumo" asp-for="Resumo" required data-validation-required-message="Resumo"></textarea>
+                <p class="help-block text-danger"></p>
+            </div>
         </div>
-    </div>
-    <br/>
-    <section class="row justify-content-center mb-5">
-        <input type="submit" class="btn btn-primary" value="Salvar" />
-    </section>
-</form>
+        <br />
+
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>Texto</label>
+                <textarea rows="10" class="form-control" placeholder="Texto" asp-for="Texto" required data-validation-required-message="Texto"></textarea>
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <br />
+        <section class="row justify-content-center mb-5">
+            <input type="submit" class="btn btn-primary" value="Salvar" />
+        </section>
+    </form>
