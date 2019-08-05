@@ -47,7 +47,15 @@ namespace BlogTdsTecnologia.Controllers
         [HttpPost]
         public IActionResult Login(Usuario usuario)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                return View(usuario);
+            }
+            
         }
 
     }

@@ -16,6 +16,8 @@ namespace BlogTdsTecnologia.Models.UsuarioModel
         [Column("nome")]
         public string Nome { get; set; }
 
+        [Required]
+        [EmailAddress(ErrorMessage = "O campo e-mail não contém um formato de e-mail válido")]
         [Column("email")]
         public string Email { get; set; }
 

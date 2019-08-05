@@ -4,10 +4,11 @@
     Layout = "_Layout";
 }
 
-<form asp-action="Novo" method="post">
+<form asp-action="Login" method="post">
 
     <div class="control-group">
         <div class="form-group floating-label-form-group controls">
+            <div><span asp-validation-for="Email" class="text-danger"></span></div>
             <label>Email</label>
             <input type="email" class="form-control" placeholder="Email" asp-for="Email" required data-validation-required-message="Email">
             <p class="help-block text-danger"></p>
