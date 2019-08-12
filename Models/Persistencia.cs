@@ -20,6 +20,8 @@ namespace BlogTdsTecnologia.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("blog");
+
             modelBuilder.Entity<Post>()
                 .HasOne(p => p.Autor)
                 .WithMany(u => u.Posts)

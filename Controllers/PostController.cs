@@ -32,6 +32,18 @@ namespace BlogTdsTecnologia.Controllers
             return View(post);
         }
 
+        public async Task<IActionResult> Completo(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var Post = await _postBusiness.ConsultarPorId(id);
+
+            return View(Post);
+
+        }
 
     }
 }

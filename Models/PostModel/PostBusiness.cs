@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,6 +22,13 @@ namespace BlogTdsTecnologia.Models.PostModel
             _context.Add(post);
             int status = await _context.SaveChangesAsync();
             return status;
+        }
+
+        public async Task<Post> ConsultarPorId(int? postId)
+        {
+            var post = await _context.PostDao.FirstOrDefaultAsync(p => p.PostId == postId);
+
+            return post;
         }
     }
 }
